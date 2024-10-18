@@ -62,72 +62,87 @@
       <div class="footer">
         <table style="display: block">
           <tr>
-            <p>Kind regards,</p>
+            <td>
+                <span style="margin-top: 14px; display: block;">Kind regards,</span>
+            </td>
           </tr>
           <tr>
-            <span
-              style="
-                font-family: sans-serif, Helvetica;
-                font-style: normal;
-                font-weight: normal;
-                font-size: 16px;
-                line-height: 20px;
-              "
-              >{{ name }}</span
-            >
+            <td>
+              <span
+                style="
+                  font-family: sans-serif, Helvetica;
+                  font-style: normal;
+                  font-weight: normal;
+                  font-size: 16px;
+                  line-height: 20px;
+                  margin-top: 14px;
+                  display: block;
+                "
+                >{{ name }}</span
+              >
+            </td>
           </tr>
-          <br />
           <tr>
-            <span
-              style="
-                font-family: sans-serif, Helvetica;
-                font-style: normal;
-                font-weight: normal;
-                font-size: 16px;
-                line-height: 20px;
-                color: #717171;
-              "
-              >{{ jobTitle }}</span
-            >
+            <td>
+              <span
+                style="
+                  font-family: sans-serif, Helvetica;
+                  font-style: normal;
+                  font-weight: normal;
+                  font-size: 16px;
+                  line-height: 20px;
+                  color: #717171;
+                  display: block;
+                "
+                >{{ jobTitle }}</span
+              >
+            </td>
           </tr>
-          <br />
-          <br />
           <tr>
-            <a
-              style="
-                text-decoration: none;
-                font-family: sans-serif, Helvetica;
-                font-style: normal;
-                font-weight: normal;
-                font-size: 14px;
-                line-height: 20px;
-                color: #717171;
-              "
-              :href="'tel:' + phoneNumberCallable"
-              >{{ phoneNumber }}</a
-            >
+            <td>
+              <a
+                style="
+                  text-decoration: none;
+                  font-family: sans-serif, Helvetica;
+                  font-style: normal;
+                  font-weight: normal;
+                  font-size: 14px;
+                  line-height: 20px;
+                  color: #717171;
+                  margin-top: 14px;
+                  display: block;
+                "
+                :href="'tel:' + phoneNumberCallable"
+                >{{ phoneNumber }}</a
+              >
+            </td>
           </tr>
-          <br />
           <tr>
-            <a
-              style="
-                text-decoration: none;
-                font-family: sans-serif, Helvetica;
-                font-style: normal;
-                font-weight: normal;
-                font-size: 14px;
-                line-height: 20px;
-                color: #717171;
-              "
-              :href="'mailto:' + email">{{ email }}</a
-            >
+            <td>
+              <a
+                style="
+                  text-decoration: none;
+                  font-family: sans-serif, Helvetica;
+                  font-style: normal;
+                  font-weight: normal;
+                  font-size: 14px;
+                  line-height: 20px;
+                  color: #717171;
+                  display: block;
+                "
+                :href="'mailto:' + email">{{ email }}</a
+              >
+            </td>
           </tr>
-          <br />
-          <img
-            src="https://buildonbeam.github.io/email-footer/logo.png"
-            style="width: 175px; margin-top: 24px"
-            alt="OnBeam"
-          />
+          <tr>
+            <td>
+              <img
+                src="https://buildonbeam.github.io/email-footer/logo.png"
+                style="width: 175px; margin-top: 16px"
+                alt="OnBeam"
+              />
+            </td>
+          </tr>
         </table>
       </div>
       <hr />
