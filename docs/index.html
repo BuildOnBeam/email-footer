@@ -19,6 +19,15 @@
             display: inline-block;
             width: 200px;
         }
+
+        /* Dark mode styles */
+        @media (prefers-color-scheme: dark) {
+            body,
+            html {
+                background-color: #121212;
+                color: #ffffff;
+            }
+        }
     </style>
   </head>
 
@@ -63,7 +72,6 @@
                 font-weight: normal;
                 font-size: 16px;
                 line-height: 20px;
-                color: #222222;
               "
               >{{ name }}</span
             >
@@ -116,9 +124,9 @@
           </tr>
           <br />
           <img
-            src="https://i.imgur.com/qd3HnxB.png"
-            style="width: 40px; margin-top: 24px"
-            alt="Merit Circle"
+            src="https://buildonbeam.github.io/email-footer/logo.png"
+            style="width: 175px; margin-top: 24px"
+            alt="OnBeam"
           />
         </table>
       </div>
