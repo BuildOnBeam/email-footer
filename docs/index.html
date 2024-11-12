@@ -27,6 +27,10 @@
       <h1>Email Footer Generator</h1>
       <form @submit.prevent>
         <div>
+          <label for="customGreeting">Custom Greeting:</label>
+          <input type="checkbox" id="customGreeting" v-model="customGreeting" />
+        </div>
+        <div>
           <label for="name">Name:</label>
           <input type="text" id="name" v-model="name" />
         </div>
@@ -53,9 +57,9 @@
       <div class="footer">
         <table style="display: inline-block; border-spacing: 0px;">
           <tbody>
-            <tr>
-              <td style="padding: 0px;">
-                  <span style="margin-top: 10px; display: block;">Kind regards,</span>
+            <tr v-if="customGreeting">
+              <td style="padding: 0px; ">
+                  <span style="display: block; margin-bottom: 14px;">Kind regards,</span>
               </td>
             </tr>
             <tr>
@@ -67,7 +71,6 @@
                     font-weight: normal;
                     font-size: 14px;
                     line-height: 18px;
-                    margin-top: 14px;
                     display: block;
                   "
                   >{{ name }}</span
@@ -169,6 +172,7 @@
           jobTitle: localStorage.getItem('jobTitle') || "Software Engineer",
           phoneNumber: localStorage.getItem('phoneNumber') || "+316 12 345 678",
           phoneNumberCallable: localStorage.getItem('phoneNumberCallable') || "0031612345678",
+          customGreeting: localStorage.getItem('customGreeting') || true,
         },
         watch: {
           name(newValue) {
@@ -185,6 +189,9 @@
           },
           phoneNumberCallable(newValue) {
             localStorage.setItem('phoneNumberCallable', newValue);
+          },
+          customGreeting(newValue) {
+            localStorage.setItem('customGreeting', this.customGreeting);
           }
         },
         methods: {
