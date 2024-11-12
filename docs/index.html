@@ -51,93 +51,95 @@
       <hr />
 
       <div class="footer">
-        <table style="display: block">
-          <tr>
-            <td style="padding: 0px;">
-                <span style="margin-top: 14px; display: block;">Kind regards,</span>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding: 0px;">
-              <span
-                style="
-                  font-family: sans-serif, Helvetica;
-                  font-style: normal;
-                  font-weight: normal;
-                  font-size: 16px;
-                  line-height: 20px;
-                  margin-top: 14px;
-                  display: block;
-                "
-                >{{ name }}</span
-              >
-            </td>
-          </tr>
-          <tr>
-            <td style="padding: 0px;">
-              <span
-                style="
-                  font-family: sans-serif, Helvetica;
-                  font-style: normal;
-                  font-weight: normal;
-                  font-size: 16px;
-                  line-height: 20px;
-                  color: #717171;
-                  display: block;
-                "
-                >{{ jobTitle }}</span
-              >
-            </td>
-          </tr>
-          <tr>
-            <td style="padding: 0px;">
-              <a
-                style="
-                  text-decoration: none;
-                  font-family: sans-serif, Helvetica;
-                  font-style: normal;
-                  font-weight: normal;
-                  font-size: 14px;
-                  line-height: 20px;
-                  color: #717171;
-                  margin-top: 14px;
-                  display: block;
-                "
-                :href="'tel:' + phoneNumberCallable"
-                >{{ phoneNumber }}</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td style="padding: 0px;">
-              <a
-                style="
-                  text-decoration: none;
-                  font-family: sans-serif, Helvetica;
-                  font-style: normal;
-                  font-weight: normal;
-                  font-size: 14px;
-                  line-height: 20px;
-                  color: #717171;
-                  display: block;
-                "
-                :href="'mailto:' + email">{{ email }}</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td style="padding: 0px;">
-              <a href="https://meritcircle.io" target="_blank">
-                <img
-                  src="https://media.onbeam.com/email-footer-meab.png"
-                  width="175"
-                  height="27"
-                  style="margin-top: 16px; display: block;"
-                  alt="OnBeam"
-                />
-              </a>
-            </td>
-          </tr>
+        <table style="display: inline-block; border-spacing: 0px;">
+          <tbody>
+            <tr>
+              <td style="padding: 0px;">
+                  <span style="margin-top: 10px; display: block;">Kind regards,</span>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 0px;">
+                <span
+                  style="
+                    font-family: sans-serif, Helvetica;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 16px;
+                    line-height: 20px;
+                    margin-top: 14px;
+                    display: block;
+                  "
+                  >{{ name }}</span
+                >
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 0px;">
+                <span
+                  style="
+                    font-family: sans-serif, Helvetica;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: #717171;
+                    display: block;
+                  "
+                  >{{ jobTitle }}</span
+                >
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 0px;">
+                <a
+                  style="
+                    text-decoration: none;
+                    font-family: sans-serif, Helvetica;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #717171;
+                    margin-top: 14px;
+                    display: block;
+                  "
+                  :href="'tel:' + phoneNumberCallable"
+                  >{{ phoneNumber }}</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 0px;">
+                <a
+                  style="
+                    text-decoration: none;
+                    font-family: sans-serif, Helvetica;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #717171;
+                    display: block;
+                  "
+                  :href="'mailto:' + email">{{ email }}</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 0px;">
+                <a href="https://meritcircle.io" target="_blank">
+                  <img
+                    src="https://media.onbeam.com/email-footer-meab.png"
+                    width="175"
+                    height="27"
+                    style="margin-top: 16px; display: block;"
+                    alt="OnBeam"
+                  />
+                </a>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
       <hr />
