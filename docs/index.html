@@ -5,28 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Email Footer Generator</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-      <style>
-        body,
-        html {
-            font-family: sans-serif, Helvetica;
-            font-size: 12px;
-            font-style: normal;
-            font-weight: normal;
-            color: #222222;
-        }
-        #app form label{
-            display: inline-block;
-            width: 200px;
-        }
-        #setup-footer-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        #setup-footer-container > div {
-            flex: 1;
-            padding: 10px;
-        }
+    <style>
+      body,
+      html {
+        font-family: sans-serif, Helvetica;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: normal;
+      }
+      #app form label {
+        display: inline-block;
+        width: 200px;
+      }
+      #setup-footer-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      #setup-footer-container > div {
+        flex: 1;
+        padding: 10px;
+      }
     </style>
   </head>
 
@@ -55,164 +54,131 @@
           <input type="tel" id="phoneNumber" v-model="phoneNumber" />
         </div>
         <div>
-            <label for="phoneNumberCallable">Phone Number (clickable):</label>
-            <input type="tel" id="phoneNumberCallable" v-model="phoneNumberCallable" />
-          </div>
+          <label for="phoneNumberCallable">Phone Number (clickable):</label>
+          <input
+            type="tel"
+            id="phoneNumberCallable"
+            v-model="phoneNumberCallable"
+          />
+        </div>
       </form>
 
       <hr />
 
       <div class="footer">
-        <table style="display: inline-block; border-spacing: 0px;">
-          <tbody>
-            <tr v-if="customGreeting">
-              <td style="padding: 0px; ">
-                  <span style="display: block; margin-bottom: 14px;">Kind regards,</span>
-              </td>
-            </tr>
-            <tr>
-              <td style="padding: 0px;">
-                <span
-                  style="
-                    font-family: sans-serif, Helvetica;
-                    font-style: normal;
-                    font-weight: normal;
-                    font-size: large;
-                    display: block;
-                  "
-                  >{{ name }}</span
-                >
-              </td>
-            </tr>
-            <tr>
-              <td style="padding: 0px;">
-                <span
-                  style="
-                    font-family: sans-serif, Helvetica;
-                    font-style: normal;
-                    font-weight: normal;
-                    font-size: larger;
-                    color: #717171;
-                    display: block;
-                  "
-                  >{{ jobTitle }}</span
-                >
-              </td>
-            </tr>
-            <tr>
-              <td style="padding: 0px;">
-                <a
-                  style="
-                    text-decoration: none;
-                    font-family: sans-serif, Helvetica;
-                    font-style: normal;
-                    font-weight: normal;
-                    color: #717171;
-                    margin-top: 14px;
-                    display: block;
-                  "
-                  :href="'tel:' + phoneNumberCallable"
-                  >{{ phoneNumber }}</a
-                >
-              </td>
-            </tr>
-            <tr>
-              <td style="padding: 0px;">
-                <a
-                  style="
-                    text-decoration: none;
-                    font-family: sans-serif, Helvetica;
-                    font-style: normal;
-                    font-weight: normal;
-                    color: #717171;
-                    display: block;
-                  "
-                  :href="'mailto:' + email">{{ email }}</a
-                >
-              </td>
-            </tr>
-            <tr>
-              <td style="padding: 0px;">
-                <a href="https://meritcircle.io" target="_blank">
-                  <img
-                    src="https://media.onbeam.com/email-footer-meab.png"
-                    width="150"
-                    style="margin-top: 16px; display: block;"
-                    alt="OnBeam"
-                  />
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <br />
+        <div v-if="customGreeting">
+          <span style="display: inline-block; margin-bottom: 14px"
+            >Kind regards,</span
+          >
+        </div>
+        <span style="font-size: large">{{ name }}&nbsp;</span><br />
+        <span style="font-size: larger; color: #717171"
+          >{{ jobTitle }}&nbsp;</span
+        ><br />
+        <a
+          style="
+            text-decoration: none;
+            color: #717171;
+            margin-top: 14px;
+            display: inline-block;
+          "
+          :href="'tel:' + phoneNumberCallable"
+          >{{ phoneNumber }}&nbsp;</a
+        ><br />
+        <a
+          style="text-decoration: none; color: #717171"
+          :href="'mailto:' + email"
+          >{{ email }}</a
+        >
+        <a
+          href="https://meritcircle.io"
+          target="_blank"
+          style="margin-top: 16px; width: 150px; height: 24px; display: block"
+        >
+          <img
+            src="https://media.onbeam.com/email-footer-meab.png"
+            width="154"
+            height="24"
+            alt="OnBeam"
+          />
+        </a>
       </div>
+
       <hr />
 
       <div id="setup-footer-container">
         <div>
-           <h2>Set up the footer in gmail</h2>
-            <ol>
-              <li>Select the whole footer by clicking on the top left corner of the footer and dragging to the bottom right corner. And copy to clipboard.</li>
-              <li>Open gmail</li>
-              <li>Click on the gear icon in the top right corner</li>
-              <li>Select "See all settings"</li>
-              <li>Scroll down to "Signature"</li>
-              <li>Click on "Manage signatures"</li>
-              <li>Click on "New signature"</li>
-              <li>Paste the footer HTML into the "Signature" field</li>
-              <li>Click on "Save"</li>
-            </ol>
+          <h2>Set up the footer in gmail</h2>
+          <ol>
+            <li>
+              Select the whole footer by clicking on the top left corner of the
+              footer and dragging to the bottom right corner. And copy to
+              clipboard.
+            </li>
+            <li>Open gmail</li>
+            <li>Click on the gear icon in the top right corner</li>
+            <li>Select "See all settings"</li>
+            <li>Scroll down to "Signature"</li>
+            <li>Click on "Manage signatures"</li>
+            <li>Click on "New signature"</li>
+            <li>Paste the footer HTML into the "Signature" field</li>
+            <li>Click on "Save"</li>
+          </ol>
         </div>
         <div>
-          <h2>Plain html</h2>
+          <h2>Other email clients that require HTML</h2>
           <p>For clients other than gmail</p>
           <button @click="copyFooterToClipboard">Copy HTML</button>
         </div>
       </div>
-
     </div>
 
     <script>
       new Vue({
         el: "#app",
         data: {
-          name: localStorage.getItem('name') || "John Doe",
-          email: localStorage.getItem('email') || "hello@onbeam.com",
-          jobTitle: localStorage.getItem('jobTitle') || "Software Engineer",
-          phoneNumber: localStorage.getItem('phoneNumber') || "+316 12 345 678",
-          phoneNumberCallable: localStorage.getItem('phoneNumberCallable') || "0031612345678",
-          customGreeting: localStorage.getItem('customGreeting') || true,
+          name: localStorage.getItem("name") || "John Doe",
+          email: localStorage.getItem("email") || "hello@onbeam.com",
+          jobTitle: localStorage.getItem("jobTitle") || "Software Engineer",
+          phoneNumber: localStorage.getItem("phoneNumber") || "+316 12 345 678",
+          phoneNumberCallable:
+            localStorage.getItem("phoneNumberCallable") || "0031612345678",
+          customGreeting: localStorage.getItem("customGreeting") || true,
         },
         watch: {
           name(newValue) {
-            localStorage.setItem('name', newValue);
+            localStorage.setItem("name", newValue);
           },
           email(newValue) {
-            localStorage.setItem('email', newValue);
+            localStorage.setItem("email", newValue);
           },
           jobTitle(newValue) {
-            localStorage.setItem('jobTitle', newValue);
+            localStorage.setItem("jobTitle", newValue);
           },
           phoneNumber(newValue) {
-            localStorage.setItem('phoneNumber', newValue);
+            localStorage.setItem("phoneNumber", newValue);
           },
           phoneNumberCallable(newValue) {
-            localStorage.setItem('phoneNumberCallable', newValue);
+            localStorage.setItem("phoneNumberCallable", newValue);
           },
           customGreeting(newValue) {
-            localStorage.setItem('customGreeting', this.customGreeting);
-          }
+            localStorage.setItem("customGreeting", this.customGreeting);
+          },
         },
         methods: {
           copyFooterToClipboard() {
-            const footerHtml = this.$el.querySelector('.footer').innerHTML;
-            navigator.clipboard.writeText(footerHtml).then(() => {
-              alert('Footer HTML copied to clipboard!');
-            }).catch(err => {
-              console.error('Failed to copy: ', err);
-            });
-          }
-        }
+            const footerHtml = this.$el.querySelector(".footer").innerHTML;
+            navigator.clipboard
+              .writeText(footerHtml)
+              .then(() => {
+                alert("Footer HTML copied to clipboard!\n\nTHIS IS NOT FOR GMAIL!!");
+              })
+              .catch((err) => {
+                console.error("Failed to copy: ", err);
+              });
+          },
+        },
       });
     </script>
   </body>
