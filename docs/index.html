@@ -12,10 +12,20 @@
             font-size: 12px;
             font-style: normal;
             font-weight: normal;
+            color: #222222;
         }
         #app form label{
             display: inline-block;
             width: 200px;
+        }
+        #setup-footer-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        #setup-footer-container > div {
+            flex: 1;
+            padding: 10px;
         }
     </style>
   </head>
@@ -137,21 +147,28 @@
         </table>
       </div>
       <hr />
-      <h2>Set up the footer in gmail</h2>
-      <ol>
-        <li>Select the whole footer by clicking on the top left corner of the footer and dragging to the bottom right corner. And copy to clipboard.</li>
-        <li>Open gmail</li>
-        <li>Click on the gear icon in the top right corner</li>
-        <li>Select "See all settings"</li>
-        <li>Scroll down to "Signature"</li>
-        <li>Click on "Manage signatures"</li>
-        <li>Click on "New signature"</li>
-        <li>Paste the footer HTML into the "Signature" field</li>
-        <li>Click on "Save"</li>
-      </ol>
 
-
-      <button @click="copyFooterToClipboard">Copy Footer HTML (for other clients than gmail)</button>
+      <div id="setup-footer-container">
+        <div>
+           <h2>Set up the footer in gmail</h2>
+            <ol>
+              <li>Select the whole footer by clicking on the top left corner of the footer and dragging to the bottom right corner. And copy to clipboard.</li>
+              <li>Open gmail</li>
+              <li>Click on the gear icon in the top right corner</li>
+              <li>Select "See all settings"</li>
+              <li>Scroll down to "Signature"</li>
+              <li>Click on "Manage signatures"</li>
+              <li>Click on "New signature"</li>
+              <li>Paste the footer HTML into the "Signature" field</li>
+              <li>Click on "Save"</li>
+            </ol>
+        </div>
+        <div>
+          <h2>Plain html</h2>
+          <p>For clients other than gmail</p>
+          <button @click="copyFooterToClipboard">Copy HTML</button>
+        </div>
+      </div>
 
     </div>
 
